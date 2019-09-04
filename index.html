@@ -30,6 +30,10 @@
           // fancyboxが開き終わったときにplayVideoを実行
           onComplete: function() {
             playVideo("player");
+          },
+          // fancyboxが閉じ終わったときにpauseVideoを実行
+          onClosed: function () {
+            pauseVideo("player");
           }
         });
 
@@ -38,6 +42,13 @@
           var video = document.getElementById(id);
           if(video.paused) {
             video.play();
+          }
+        }
+        // 指定idのvideoを停止
+        function pauseVideo(id) {
+          var video = document.getElementById(id);
+          if(video.played) {
+            video.pause();
           }
         }
       });
