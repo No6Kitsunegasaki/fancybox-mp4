@@ -27,14 +27,14 @@
           height: '100%',
           overlayOpacity: 0.9,
           overlayColor: '#000',
-          // fancyboxが開き終わったときにvideoPlayを実行
+          // fancyboxが開き終わったときにplayVideoを実行
           onComplete: function() {
-            videoPlay("player");
+            playVideo("player");
           }
         });
 
         // 指定idのvideoを再生
-        function videoPlay(id) {
+        function playVideo(id) {
           var video = document.getElementById(id);
           if(video.paused) {
             video.play();
